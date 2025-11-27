@@ -1,0 +1,41 @@
+[0.612s] Invoking command in '/home/hakozaki/ros2_ws/src/mypkg': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/home/hakozaki/ros2_ws/src/mypkg/build/mypkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/hakozaki/ros2_ws/src/mypkg/install/mypkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/mypkg build --build-base /home/hakozaki/ros2_ws/src/mypkg/build/mypkg/build install --record /home/hakozaki/ros2_ws/src/mypkg/build/mypkg/install.log --single-version-externally-managed install_data
+[0.817s] running egg_info
+[0.817s] creating build/mypkg/mypkg.egg-info
+[0.818s] writing build/mypkg/mypkg.egg-info/PKG-INFO
+[0.818s] writing dependency_links to build/mypkg/mypkg.egg-info/dependency_links.txt
+[0.819s] writing entry points to build/mypkg/mypkg.egg-info/entry_points.txt
+[0.819s] writing requirements to build/mypkg/mypkg.egg-info/requires.txt
+[0.819s] writing top-level names to build/mypkg/mypkg.egg-info/top_level.txt
+[0.819s] writing manifest file 'build/mypkg/mypkg.egg-info/SOURCES.txt'
+[0.821s] reading manifest file 'build/mypkg/mypkg.egg-info/SOURCES.txt'
+[0.822s] writing manifest file 'build/mypkg/mypkg.egg-info/SOURCES.txt'
+[0.825s] running build
+[0.825s] running build_py
+[0.825s] creating /home/hakozaki/ros2_ws/src/mypkg/build/mypkg/build
+[0.825s] creating /home/hakozaki/ros2_ws/src/mypkg/build/mypkg/build/lib
+[0.826s] creating /home/hakozaki/ros2_ws/src/mypkg/build/mypkg/build/lib/mypkg
+[0.826s] copying mypkg/__init__.py -> /home/hakozaki/ros2_ws/src/mypkg/build/mypkg/build/lib/mypkg
+[0.827s] copying mypkg/talker.py -> /home/hakozaki/ros2_ws/src/mypkg/build/mypkg/build/lib/mypkg
+[0.827s] copying mypkg/listener.py -> /home/hakozaki/ros2_ws/src/mypkg/build/mypkg/build/lib/mypkg
+[0.827s] running install
+[0.828s] running install_lib
+[0.828s] creating /home/hakozaki/ros2_ws/src/mypkg/install/mypkg/lib/python3.10/site-packages/mypkg
+[0.829s] copying /home/hakozaki/ros2_ws/src/mypkg/build/mypkg/build/lib/mypkg/__init__.py -> /home/hakozaki/ros2_ws/src/mypkg/install/mypkg/lib/python3.10/site-packages/mypkg
+[0.829s] copying /home/hakozaki/ros2_ws/src/mypkg/build/mypkg/build/lib/mypkg/talker.py -> /home/hakozaki/ros2_ws/src/mypkg/install/mypkg/lib/python3.10/site-packages/mypkg
+[0.829s] copying /home/hakozaki/ros2_ws/src/mypkg/build/mypkg/build/lib/mypkg/listener.py -> /home/hakozaki/ros2_ws/src/mypkg/install/mypkg/lib/python3.10/site-packages/mypkg
+[0.830s] byte-compiling /home/hakozaki/ros2_ws/src/mypkg/install/mypkg/lib/python3.10/site-packages/mypkg/__init__.py to __init__.cpython-310.pyc
+[0.830s] byte-compiling /home/hakozaki/ros2_ws/src/mypkg/install/mypkg/lib/python3.10/site-packages/mypkg/talker.py to talker.cpython-310.pyc
+[0.831s] byte-compiling /home/hakozaki/ros2_ws/src/mypkg/install/mypkg/lib/python3.10/site-packages/mypkg/listener.py to listener.cpython-310.pyc
+[0.831s] running install_data
+[0.831s] creating /home/hakozaki/ros2_ws/src/mypkg/install/mypkg/share/ament_index
+[0.831s] creating /home/hakozaki/ros2_ws/src/mypkg/install/mypkg/share/ament_index/resource_index
+[0.832s] creating /home/hakozaki/ros2_ws/src/mypkg/install/mypkg/share/ament_index/resource_index/packages
+[0.832s] copying resource/mypkg -> /home/hakozaki/ros2_ws/src/mypkg/install/mypkg/share/ament_index/resource_index/packages
+[0.832s] copying package.xml -> /home/hakozaki/ros2_ws/src/mypkg/install/mypkg/share/mypkg
+[0.832s] running install_egg_info
+[0.834s] Copying build/mypkg/mypkg.egg-info to /home/hakozaki/ros2_ws/src/mypkg/install/mypkg/lib/python3.10/site-packages/mypkg-0.0.0-py3.10.egg-info
+[0.836s] running install_scripts
+[0.857s] Installing listener script to /home/hakozaki/ros2_ws/src/mypkg/install/mypkg/lib/mypkg
+[0.858s] Installing talker script to /home/hakozaki/ros2_ws/src/mypkg/install/mypkg/lib/mypkg
+[0.858s] writing list of installed files to '/home/hakozaki/ros2_ws/src/mypkg/build/mypkg/install.log'
+[0.884s] Invoked command in '/home/hakozaki/ros2_ws/src/mypkg' returned '0': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/home/hakozaki/ros2_ws/src/mypkg/build/mypkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/hakozaki/ros2_ws/src/mypkg/install/mypkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/mypkg build --build-base /home/hakozaki/ros2_ws/src/mypkg/build/mypkg/build install --record /home/hakozaki/ros2_ws/src/mypkg/build/mypkg/install.log --single-version-externally-managed install_data
