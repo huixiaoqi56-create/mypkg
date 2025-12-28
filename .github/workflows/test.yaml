@@ -45,5 +45,11 @@ jobs:
         run: |
           source /opt/ros/humble/setup.bash
           source install/setup.bash
-          cd src/mypkg
+
+          # test.bash の場所を自動検出
+          TEST_DIR=$(find . -name test.bash -type f -printf '%h\n' | head -n 1)
+
+          echo "[CI] test.bash found in: $TEST_DIR"
+
+          cd "$TEST_DIR"
           bash test.bash
