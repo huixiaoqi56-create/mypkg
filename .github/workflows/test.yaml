@@ -10,7 +10,7 @@ jobs:
 
     strategy:
       matrix:
-        python-version: ["3.8", "3.9", "3.10"]
+        python-version: ['3.8', '3.9', '3.10']
 
     steps:
       - name: Checkout repository
@@ -34,11 +34,14 @@ jobs:
           sudo apt install -y ros-humble-ros-base python3-colcon-common-extensions
 
       - name: Build workspace
+        shell: bash
         run: |
           source /opt/ros/humble/setup.bash
           colcon build --symlink-install
 
       - name: Run tests
+        shell: bash
         run: |
           source /opt/ros/humble/setup.bash
+          source install/setup.bash
           bash test.bash
