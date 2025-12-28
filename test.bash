@@ -21,7 +21,7 @@ echo "[TEST] start listener (timeout)"
 timeout 3 ros2 run mypkg system_health_listener || true
 
 echo "[TEST] check log file"
-LOG_FILE="$HOME/ros2_ws/log/system_health.csv"
+LOG_FILE="/tmp/system_health_log.csv"
 
 if [ ! -f "$LOG_FILE" ]; then
   echo "[FAIL] log file not found"
