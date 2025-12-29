@@ -6,12 +6,13 @@ def generate_launch_description():
         Node(
             package='mypkg',
             executable='system_health_monitor',
+            name='system_health_monitor',
             output='screen'
         ),
         Node(
             package='mypkg',
             executable='system_health_listener',
-            parameters=[{'log_path': '/tmp/system_health.csv'}],
+            name='system_health_listener',
             output='screen'
         ),
     ])

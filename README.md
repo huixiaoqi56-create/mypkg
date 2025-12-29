@@ -32,19 +32,24 @@ colcon build --symlink-install
 source install/setup.bash
 ```
 ####実行方法
-- モニタノード
+#####モニタノード
 - 稼働時間とネットワーク状態を監視し，トピックに送信します。
 ```bash
 source ~/ros2_ws/install/setup.bash
 ros2 run mypkg system_health_monitor
 ```
-- リスナノード
+#####リスナノード
 - 受信したデータを表示し，CSV ファイルとして自動保存します。
 ```bash
 source ~/ros2_ws/install/setup.bash
 ros2 run mypkg system_health_listener
 ```
-- 実行例
+
+#####launch ファイル
+```bash
+ros2 launch mypkg system_health.launch.py
+```
+#####実行例
 - モニタ側出力例
 ```
 [INFO] [system_health_monitor]: time=5s network=OK
@@ -54,6 +59,10 @@ ros2 run mypkg system_health_listener
 ```
 [INFO] [system_health_listener]: logged: 5,OK
 [INFO] [system_health_listener]: logged: 6,OK
+```
+- launchファイル出力例
+```
+
 ```
 ###ログの確認方法
 - CSV ログの内容を表示
@@ -75,6 +84,7 @@ cat ~/ros2_ws/log/system_health.csv | cut -d, -f1
 ##テスト環境
 - Ubuntu 22.04 LTS
 - ROS 2 Humble
+
 ##ライセンス
 - このソフトウェアパッケージは、3条項BSDライセンスの下で再頒布および使用が許可されます。
 
