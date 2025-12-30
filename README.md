@@ -7,6 +7,34 @@
 - 監視結果を ROS 2 のトピック通信で送信する
 - Listener 側で受信データを表示し，CSV 形式で自動保存する
 - どちらかの状態が異常になった場合にプログラムを終了する
+## 構成
+
+### ノード一覧
+
+| ノード名 | 役割 |
+|--------|------|
+| `/system_health_monitor` | 稼働時間とネットワーク状態を送信 |
+| `/system_health_listener` | 情報を受信・ログ保存・オフライン検知 |
+## トピック一覧
+| トピック名 | 型 | 発行ノード | 内容 |
+|-----------|----|-----------|------|
+| `/system_health` | `std_msgs/String` |` system_health_monitor` | `"<秒数>,<状態>"` 形式の文字列 |
+## 各ノードの機能説明
+
+### system_health_monitor
+
+- 起動時に内部カウンタを 0 に初期化
+- 1 秒周期で以下を実行
+  - 秒数を +1
+  - ネットワーク接続状態を判定（簡易）
+  - `/system_health` トピックへ publish
+- 標準出力に現在の状態を表示
+### system_health_listener
+
+- `/system_health` トピックを subscribe
+- 受信したデータを CSV 形式で自動保存
+- 一定時間メッセージが来なければ  
+  **「monitor offline」と判断してエラー表示後に終了**
 
 ## 動作仕様
 
@@ -21,7 +49,7 @@
 
 - 以下の手順でインストールしてください。
 
-#### 1. リポジトリの取得
+#### リポジトリの取得
 
 ```bash
 cd ~/ros2_ws/src
@@ -34,25 +62,25 @@ colcon build --symlink-install
 source install/setup.bash
 ```
 ### 実行方法
-#### モニタノード
+#### monitor
 - 稼働時間とネットワーク状態を監視し，トピックに送信します。
 ```bash
 source ~/ros2_ws/install/setup.bash
 ros2 run mypkg system_health_monitor
 ```
-#### リスナノード
+#### listener
 - 受信したデータを表示し，CSV ファイルとして自動保存します。
 ```bash
 source ~/ros2_ws/install/setup.bash
 ros2 run mypkg system_health_listener
 ```
 
-#### launch ファイル
+#### launch
 ```bash
 ros2 launch mypkg system_health.launch.py
 ```
 #### 実行例
-- モニタ側出力例
+- monitor 側出力例
 ```
 [INFO] [1767056060.597950951] [system_health_monitor]: SystemHealthMonitor started
 [INFO] [1767056061.607781104] [system_health_monitor]: time=1s network=OK
@@ -63,7 +91,7 @@ ros2 launch mypkg system_health.launch.py
 [INFO] [1767056066.600541314] [system_health_monitor]: time=6s network=OK
 
 ```
-- リスナ側出力例
+- listener 側出力例
 ```
 [INFO] [1767056064.318518573] [system_health_listener]: SystemHealthListener started, log=/tmp/system_health_log.csv
 [INFO] [1767056064.602282863] [system_health_listener]: uptime=4s net=True
@@ -71,7 +99,7 @@ ros2 launch mypkg system_health.launch.py
 [INFO] [1767056066.601213502] [system_health_listener]: uptime=6s net=True
 
 ```
-- launchファイル出力例
+- launch ファイル出力例
 ```
 [INFO] [system_health_monitor-1]: process started with pid [347728]
 [INFO] [system_health_listener-2]: process started with pid [347730]
@@ -87,6 +115,13 @@ ros2 launch mypkg system_health.launch.py
 - CSV ログの内容を表示
 ```
 cat ~/ros2_ws/log/system_health.csv
+```
+#### ログ出力例
+```
+uptime_sec,network_ok,recv_time
+2,True,1767056289.8065047
+3,True,1767056290.0766027
+4,True,1767056291.075956
 ```
 ## 必要なソフトウェア
 
