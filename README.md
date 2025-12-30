@@ -6,19 +6,19 @@
 - ネットワーク接続状態を定期的に監視する
 - 監視結果を ROS 2 のトピック通信で送信する
 - Listener 側で受信データを表示し，CSV 形式で自動保存する
-- どちらかの状態が異常になった場合にプログラムを終了する
+- monitor の状態が異常になった場合にlistener が終了する
 ## 構成
 
 ### ノード一覧
 
 | ノード名 | 役割 |
 |--------|------|
-| `/system_health_monitor` | 稼働時間とネットワーク状態を送信 |
-| `/system_health_listener` | 情報を受信・ログ保存・オフライン検知 |
+| `system_health_monitor` | 稼働時間とネットワーク状態を送信 |
+| `system_health_listener` | 情報を受信・ログ保存・オフライン検知 |
 ## トピック一覧
 | トピック名 | 型 | 発行ノード | 内容 |
 |-----------|----|-----------|------|
-| `/system_health` | `std_msgs/String` |` system_health_monitor` | `"<秒数>,<状態>"` 形式の文字列 |
+| `system_health` | `std_msgs/String` |` system_health_monitor` | `"<秒数>,<状態>"` 形式の文字列 |
 ## 各ノードの機能説明
 
 ### system_health_monitor
@@ -26,7 +26,7 @@
 - 起動時に内部カウンタを 0 に初期化
 - 1 秒周期で以下を実行
   - 秒数を +1
-  - ネットワーク接続状態を判定（簡易）
+  - ネットワーク接続状態を判定
   - `/system_health` トピックへ publish
 - 標準出力に現在の状態を表示
 ### system_health_listener
