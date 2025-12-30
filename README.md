@@ -1,5 +1,5 @@
 # ROS 2 稼働時間、ネットワーク監視パッケージ
-
+[![test](https://github.com/huixiaoqi56-create/mypkg1/actions/workflows/test.yaml/badge.svg)](https://github.com/huixiaoqi56-create/mypkg1/actions/workflows/test.yaml)
 ## 概要
 - ROS 2 上で動作する，稼働時間（秒数）とネットワーク接続状態を監視する。
 - ノードの起動からの稼働時間を秒単位でカウントする
