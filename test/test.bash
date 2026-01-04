@@ -11,7 +11,7 @@ dir="$HOME"
 
 WS="$dir/ros2_ws"
 
-cd "$WS"
+cd $dir/ros2_ws
 colcon build --packages-select mypkg
 source /opt/ros/humble/setup.bash
 source "$WS/install/setup.bash"
