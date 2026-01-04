@@ -1,0 +1,4 @@
+[console_scripts]
+system_health_listener = mypkg.system_health_listener:main
+system_health_monitor = mypkg.system_health_monitor:main
+

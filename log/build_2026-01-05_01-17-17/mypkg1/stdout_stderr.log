@@ -1,0 +1,40 @@
+running egg_info
+creating build/mypkg1/mypkg.egg-info
+writing build/mypkg1/mypkg.egg-info/PKG-INFO
+writing dependency_links to build/mypkg1/mypkg.egg-info/dependency_links.txt
+writing entry points to build/mypkg1/mypkg.egg-info/entry_points.txt
+writing requirements to build/mypkg1/mypkg.egg-info/requires.txt
+writing top-level names to build/mypkg1/mypkg.egg-info/top_level.txt
+writing manifest file 'build/mypkg1/mypkg.egg-info/SOURCES.txt'
+reading manifest file 'build/mypkg1/mypkg.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file 'build/mypkg1/mypkg.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/hakozaki/ros2_ws/src/mypkg/build/mypkg1/build
+creating /home/hakozaki/ros2_ws/src/mypkg/build/mypkg1/build/lib
+creating /home/hakozaki/ros2_ws/src/mypkg/build/mypkg1/build/lib/mypkg
+copying mypkg/__init__.py -> /home/hakozaki/ros2_ws/src/mypkg/build/mypkg1/build/lib/mypkg
+copying mypkg/system_health_listener.py -> /home/hakozaki/ros2_ws/src/mypkg/build/mypkg1/build/lib/mypkg
+copying mypkg/system_health_monitor.py -> /home/hakozaki/ros2_ws/src/mypkg/build/mypkg1/build/lib/mypkg
+running install
+running install_lib
+creating /home/hakozaki/ros2_ws/src/mypkg/install/mypkg1/lib/python3.10/site-packages/mypkg
+copying /home/hakozaki/ros2_ws/src/mypkg/build/mypkg1/build/lib/mypkg/__init__.py -> /home/hakozaki/ros2_ws/src/mypkg/install/mypkg1/lib/python3.10/site-packages/mypkg
+copying /home/hakozaki/ros2_ws/src/mypkg/build/mypkg1/build/lib/mypkg/system_health_listener.py -> /home/hakozaki/ros2_ws/src/mypkg/install/mypkg1/lib/python3.10/site-packages/mypkg
+copying /home/hakozaki/ros2_ws/src/mypkg/build/mypkg1/build/lib/mypkg/system_health_monitor.py -> /home/hakozaki/ros2_ws/src/mypkg/install/mypkg1/lib/python3.10/site-packages/mypkg
+byte-compiling /home/hakozaki/ros2_ws/src/mypkg/install/mypkg1/lib/python3.10/site-packages/mypkg/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/hakozaki/ros2_ws/src/mypkg/install/mypkg1/lib/python3.10/site-packages/mypkg/system_health_listener.py to system_health_listener.cpython-310.pyc
+byte-compiling /home/hakozaki/ros2_ws/src/mypkg/install/mypkg1/lib/python3.10/site-packages/mypkg/system_health_monitor.py to system_health_monitor.cpython-310.pyc
+running install_data
+copying resource/mypkg -> /home/hakozaki/ros2_ws/src/mypkg/install/mypkg1/share/ament_index/resource_index/packages
+creating /home/hakozaki/ros2_ws/src/mypkg/install/mypkg1/share/mypkg
+copying package.xml -> /home/hakozaki/ros2_ws/src/mypkg/install/mypkg1/share/mypkg
+creating /home/hakozaki/ros2_ws/src/mypkg/install/mypkg1/share/mypkg/launch
+copying launch/system_health.launch.py -> /home/hakozaki/ros2_ws/src/mypkg/install/mypkg1/share/mypkg/launch
+running install_egg_info
+Copying build/mypkg1/mypkg.egg-info to /home/hakozaki/ros2_ws/src/mypkg/install/mypkg1/lib/python3.10/site-packages/mypkg-0.0.0-py3.10.egg-info
+running install_scripts
+Installing system_health_listener script to /home/hakozaki/ros2_ws/src/mypkg/install/mypkg1/lib/mypkg
+Installing system_health_monitor script to /home/hakozaki/ros2_ws/src/mypkg/install/mypkg1/lib/mypkg
+writing list of installed files to '/home/hakozaki/ros2_ws/src/mypkg/build/mypkg1/install.log'

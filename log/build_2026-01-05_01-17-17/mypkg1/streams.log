@@ -1,0 +1,42 @@
+[0.547s] Invoking command in '/home/hakozaki/ros2_ws/src/mypkg': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/home/hakozaki/ros2_ws/src/mypkg/build/mypkg1/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/hakozaki/ros2_ws/src/mypkg/install/mypkg1/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/mypkg1 build --build-base /home/hakozaki/ros2_ws/src/mypkg/build/mypkg1/build install --record /home/hakozaki/ros2_ws/src/mypkg/build/mypkg1/install.log --single-version-externally-managed install_data
+[0.716s] running egg_info
+[0.716s] creating build/mypkg1/mypkg.egg-info
+[0.717s] writing build/mypkg1/mypkg.egg-info/PKG-INFO
+[0.717s] writing dependency_links to build/mypkg1/mypkg.egg-info/dependency_links.txt
+[0.717s] writing entry points to build/mypkg1/mypkg.egg-info/entry_points.txt
+[0.718s] writing requirements to build/mypkg1/mypkg.egg-info/requires.txt
+[0.718s] writing top-level names to build/mypkg1/mypkg.egg-info/top_level.txt
+[0.718s] writing manifest file 'build/mypkg1/mypkg.egg-info/SOURCES.txt'
+[0.720s] reading manifest file 'build/mypkg1/mypkg.egg-info/SOURCES.txt'
+[0.720s] adding license file 'LICENSE'
+[0.721s] writing manifest file 'build/mypkg1/mypkg.egg-info/SOURCES.txt'
+[0.721s] running build
+[0.721s] running build_py
+[0.721s] creating /home/hakozaki/ros2_ws/src/mypkg/build/mypkg1/build
+[0.721s] creating /home/hakozaki/ros2_ws/src/mypkg/build/mypkg1/build/lib
+[0.722s] creating /home/hakozaki/ros2_ws/src/mypkg/build/mypkg1/build/lib/mypkg
+[0.722s] copying mypkg/__init__.py -> /home/hakozaki/ros2_ws/src/mypkg/build/mypkg1/build/lib/mypkg
+[0.722s] copying mypkg/system_health_listener.py -> /home/hakozaki/ros2_ws/src/mypkg/build/mypkg1/build/lib/mypkg
+[0.722s] copying mypkg/system_health_monitor.py -> /home/hakozaki/ros2_ws/src/mypkg/build/mypkg1/build/lib/mypkg
+[0.723s] running install
+[0.723s] running install_lib
+[0.724s] creating /home/hakozaki/ros2_ws/src/mypkg/install/mypkg1/lib/python3.10/site-packages/mypkg
+[0.724s] copying /home/hakozaki/ros2_ws/src/mypkg/build/mypkg1/build/lib/mypkg/__init__.py -> /home/hakozaki/ros2_ws/src/mypkg/install/mypkg1/lib/python3.10/site-packages/mypkg
+[0.724s] copying /home/hakozaki/ros2_ws/src/mypkg/build/mypkg1/build/lib/mypkg/system_health_listener.py -> /home/hakozaki/ros2_ws/src/mypkg/install/mypkg1/lib/python3.10/site-packages/mypkg
+[0.724s] copying /home/hakozaki/ros2_ws/src/mypkg/build/mypkg1/build/lib/mypkg/system_health_monitor.py -> /home/hakozaki/ros2_ws/src/mypkg/install/mypkg1/lib/python3.10/site-packages/mypkg
+[0.725s] byte-compiling /home/hakozaki/ros2_ws/src/mypkg/install/mypkg1/lib/python3.10/site-packages/mypkg/__init__.py to __init__.cpython-310.pyc
+[0.725s] byte-compiling /home/hakozaki/ros2_ws/src/mypkg/install/mypkg1/lib/python3.10/site-packages/mypkg/system_health_listener.py to system_health_listener.cpython-310.pyc
+[0.726s] byte-compiling /home/hakozaki/ros2_ws/src/mypkg/install/mypkg1/lib/python3.10/site-packages/mypkg/system_health_monitor.py to system_health_monitor.cpython-310.pyc
+[0.726s] running install_data
+[0.726s] copying resource/mypkg -> /home/hakozaki/ros2_ws/src/mypkg/install/mypkg1/share/ament_index/resource_index/packages
+[0.726s] creating /home/hakozaki/ros2_ws/src/mypkg/install/mypkg1/share/mypkg
+[0.726s] copying package.xml -> /home/hakozaki/ros2_ws/src/mypkg/install/mypkg1/share/mypkg
+[0.726s] creating /home/hakozaki/ros2_ws/src/mypkg/install/mypkg1/share/mypkg/launch
+[0.727s] copying launch/system_health.launch.py -> /home/hakozaki/ros2_ws/src/mypkg/install/mypkg1/share/mypkg/launch
+[0.727s] running install_egg_info
+[0.728s] Copying build/mypkg1/mypkg.egg-info to /home/hakozaki/ros2_ws/src/mypkg/install/mypkg1/lib/python3.10/site-packages/mypkg-0.0.0-py3.10.egg-info
+[0.729s] running install_scripts
+[0.745s] Installing system_health_listener script to /home/hakozaki/ros2_ws/src/mypkg/install/mypkg1/lib/mypkg
+[0.745s] Installing system_health_monitor script to /home/hakozaki/ros2_ws/src/mypkg/install/mypkg1/lib/mypkg
+[0.746s] writing list of installed files to '/home/hakozaki/ros2_ws/src/mypkg/build/mypkg1/install.log'
+[0.765s] Invoked command in '/home/hakozaki/ros2_ws/src/mypkg' returned '0': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/home/hakozaki/ros2_ws/src/mypkg/build/mypkg1/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/hakozaki/ros2_ws/src/mypkg/install/mypkg1/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/mypkg1 build --build-base /home/hakozaki/ros2_ws/src/mypkg/build/mypkg1/build install --record /home/hakozaki/ros2_ws/src/mypkg/build/mypkg1/install.log --single-version-externally-managed install_data

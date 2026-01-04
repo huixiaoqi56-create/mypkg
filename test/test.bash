@@ -2,43 +2,40 @@
 # SPDX-FileCopyrightText: 2025 hakozaki teruki
 # SPDX-License-Identifier: BSD-3-Clause
 
-set -eu
-
-LOG=/tmp/system_health_log.csv
+set -e
 
 echo "[TEST] start system health test"
+
+dir="$HOME"
+[ "$1" != "" ] && dir="$1"
+
+WS="$dir/ros2_ws"
+
+cd "$WS"
+colcon build --packages-select mypkg
+source /opt/ros/humble/setup.bash
+source "$WS/install/setup.bash"
 
 echo "[TEST] check executables"
 ros2 pkg executables mypkg | grep system_health_monitor
 ros2 pkg executables mypkg | grep system_health_listener
 
+LOG=/tmp/system_health_test.log
 rm -f "$LOG"
 
-echo "[TEST] start monitor (background)"
-timeout 3 ros2 run mypkg system_health_monitor &
-MON_PID=$!
+echo "[TEST] run launch (timeout)"
+timeout 10 ros2 launch mypkg system_health.launch.py > "$LOG" 2>&1 || true
 
-sleep 1
+echo "[TEST] check log content"
 
-echo "[TEST] start listener (background)"
-timeout 5 ros2 run mypkg system_health_listener \
-  --ros-args -p log_path:="$LOG" &
-LIS_PID=$!
+grep "SystemHealthMonitor started" "$LOG"
+grep "SystemHealthListener started" "$LOG"
 
+CSV=/tmp/system_health_log.csv
+echo "[TEST] check csv log"
 
-sleep 3
+test -f "$CSV"
+test -s "$CSV"
 
-echo "[TEST] check log file"
-if [ ! -f "$LOG" ]; then
-  echo "[FAIL] log file not found"
-  exit 1
-fi
-
-echo "[TEST] log file exists"
-cat "$LOG"
-
-kill $MON_PID 2>/dev/null || true
-kill $LIS_PID 2>/dev/null || true
-
-echo "[TEST] finished successfully"
+echo "[TEST] finished"
 exit 0

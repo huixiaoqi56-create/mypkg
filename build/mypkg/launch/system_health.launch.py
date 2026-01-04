@@ -1,1 +1,0 @@
-/home/hakozaki/ros2_ws/src/mypkg/launch/system_health.launch.py
