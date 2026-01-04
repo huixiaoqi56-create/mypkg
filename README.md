@@ -43,42 +43,6 @@
 - listener 側でログを自動生成
 - Ctrl+C による終了も正常系として扱う
 
-## 使用方法
-
-### インストール
-
-- 以下の手順でインストールしてください。
-
-#### リポジトリの取得
-
-```bash
-cd ~/ros2_ws/src
-git clone https://github.com/huixiaoqi56-create/mypkg1.git
-```
-### ビルド
-```bash
-cd ~/ros2_ws
-colcon build --symlink-install
-source install/setup.bash
-```
-### 実行方法
-#### monitor
-- 稼働時間とネットワーク状態を監視し，トピックに送信します。
-```bash
-source ~/ros2_ws/install/setup.bash
-ros2 run mypkg system_health_monitor
-```
-#### listener
-- 受信したデータを表示し，CSV ファイルとして自動保存します。
-```bash
-source ~/ros2_ws/install/setup.bash
-ros2 run mypkg system_health_listener
-```
-
-#### launch
-```bash
-ros2 launch mypkg system_health.launch.py
-```
 #### 実行例
 - monitor 側出力例
 ```
@@ -110,18 +74,6 @@ ros2 launch mypkg system_health.launch.py
 [system_health_monitor-1] [INFO] [1767056290.076652404] [system_health_monitor]: time=3s network=OK
 [system_health_listener-2] [INFO] [1767056290.077386418] [system_health_listener]: uptime=3s net=True
 
-```
-### ログの確認方法
-- CSV ログの内容を表示
-```
-cat ~/ros2_ws/log/system_health.csv
-```
-#### ログ出力例
-```
-uptime_sec,network_ok,recv_time
-2,True,1767056289.8065047
-3,True,1767056290.0766027
-4,True,1767056291.075956
 ```
 ## 必要なソフトウェア
 
