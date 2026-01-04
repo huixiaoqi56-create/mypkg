@@ -10,7 +10,7 @@ jobs:
 
     strategy:
       matrix:
-        python-version: ['3.8', '3.9', '3.10']
+        python-version: ["3.8", "3.9", "3.10"]
 
     steps:
       - name: Checkout repository
@@ -27,28 +27,20 @@ jobs:
           sudo apt install -y curl gnupg lsb-release
           sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key \
             -o /usr/share/keyrings/ros-archive-keyring.gpg
-          echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] \
+          echo "deb [arch=amd64 signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] \
             http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" \
             | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
           sudo apt update
           sudo apt install -y ros-humble-ros-base python3-colcon-common-extensions
 
-      - name: Build workspace
-        shell: bash
+      - name: Build package
         run: |
           source /opt/ros/humble/setup.bash
-          rm -rf build install log
           colcon build --symlink-install
 
       - name: Run tests
-        shell: bash
         run: |
           source /opt/ros/humble/setup.bash
           source install/setup.bash
-
-          TEST_DIR=$(find . -name test.bash -type f -printf '%h\n' | head -n 1)
-
-          echo "[CI] test.bash found in: $TEST_DIR"
-
-          cd "$TEST_DIR"
+          echo "[CI] test.bash found in: ./test"
           bash test/test.bash
